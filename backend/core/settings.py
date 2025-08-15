@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'systems',
+    # 'anymail',
 ]
 
 MIDDLEWARE = [
@@ -65,7 +66,6 @@ REST_FRAMEWORK = {
     # ),
 }
 
-
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=7),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=30),
@@ -82,6 +82,24 @@ SIMPLE_JWT = {
 #     }
 # }
 
+
+TERMII_API_KEY = os.getenv("TERMII_API_KEY")
+TERMII_BASE_URL = os.getenv("TERMII_BASE_URL")
+TERMII_SENDER_ID = os.getenv("TERMII_SENDER_ID")
+
+MAX_OTP_SENDS = 3
+RATE_LIMIT_WINDOW = 600
+OTP_EXPIRY = 300
+
+
+# EMAIL_BACKEND = 'anymail.backends.mailjet.EmailBackend'
+
+# ANYMAIL = {
+#     "MAILJET_API_KEY": os.getenv('MAILJET_API_KEY'),
+#     "MAILJET_SECRET_KEY": os.getenv('MAILJET_SECRET_KEY'),
+# }
+
+# DEFAULT_FROM_EMAIL = "ajugapterben@gmail.com"
 
 ROOT_URLCONF = 'core.urls'
 
@@ -103,6 +121,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
+AUTH_USER_MODEL = "systems.User"
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
