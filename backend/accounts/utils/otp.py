@@ -49,13 +49,14 @@ def send_otp(phone_number):
     payload = {
         "to": phone_number,
         "from": settings.TERMII_SENDER_ID,
-        "sms": f"Your pin is {otp} ",
+        "sms": f"Your pin is {otp}",
         "type": "plain",
-        "channel": "whatsapp",
+        "channel": "generic",
         "api_key": settings.TERMII_API_KEY,
     }
     headers = {"Content-Type": "application/json"}
     response = requests.post(url, headers=headers, json=payload)
+    print(response)
     return response.json()
 
 def verify_otp(phone_number, otp_code):
