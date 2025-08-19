@@ -32,8 +32,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "ovena.vercel.app",
     "ovena-backend-git-main-phanstudios-projects.vercel.app",
-    "ovena-backend-fj9igikuk-phanstudios-projects.vercel.app",
     "ovena-backend-phanstudios-projects.vercel.app",
+    ".vercel.app"
 ]
 
 
