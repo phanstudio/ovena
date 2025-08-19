@@ -1,14 +1,7 @@
 from django.db import models
 from accounts.models import (
-    User, RestaurantProfile
+    RestaurantProfile
 )
-
-class DeliveryAddress(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    address = models.CharField(max_length=255)  # "2 Computer Village, Ikeja, Lagos, Nigeria"
-    location = models.PointField()              # (lng, lat)
-    created_at = models.DateTimeField(auto_now_add=True)
-
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=255)
@@ -18,7 +11,7 @@ class Restaurant(models.Model):
 
 
 class Menu(models.Model):
-    restaurant = models.ForeignKey("RestaurantProfile", on_delete=models.CASCADE, related_name="menus")
+    restaurant = models.ForeignKey(RestaurantProfile, on_delete=models.CASCADE, related_name="menus")
     name = models.CharField(max_length=255)  # e.g., "Lunch Menu", "Weekend Specials"
     description = models.TextField(blank=True)
     is_active = models.BooleanField(default=True)
