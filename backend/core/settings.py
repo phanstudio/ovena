@@ -29,13 +29,16 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+VERCEL_URL = os.environ.get("VERCEL_URL")  # Vercel sets this per deployment
+
 ALLOWED_HOSTS = [
     "ovena.vercel.app",
     "ovena-backend-git-main-phanstudios-projects.vercel.app",
     "ovena-backend-phanstudios-projects.vercel.app",
-    ".vercel.app"
 ]
 
+if VERCEL_URL:
+    ALLOWED_HOSTS.append(VERCEL_URL)
 
 # Application definition
 
