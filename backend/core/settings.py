@@ -29,7 +29,12 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "ovena.vercel.app",
+    "ovena-backend-git-main-phanstudios-projects.vercel.app",
+    "ovena-backend-fj9igikuk-phanstudios-projects.vercel.app",
+    "ovena-backend-phanstudios-projects.vercel.app",
+]
 
 
 # Application definition
@@ -44,6 +49,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'accounts',
+    'menu',
     # 'anymail',
 ]
 
