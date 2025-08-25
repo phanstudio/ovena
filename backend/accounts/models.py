@@ -30,7 +30,7 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True, null=True, blank=True)
-    phone_number = models.CharField(max_length=18, unique=True, null=True, blank=True)
+    phone_number = models.CharField(max_length=18,  null=True, blank=True) #unique=True,
     name = models.CharField(max_length=150)
 
     role = models.CharField(max_length=20, choices=[

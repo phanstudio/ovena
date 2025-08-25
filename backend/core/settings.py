@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
     "ovena.vercel.app",
     "ovena-backend-git-main-phanstudios-projects.vercel.app",
     "ovena-backend-phanstudios-projects.vercel.app",
+    "127.0.0.1",
 ]
 
 if VERCEL_URL:
